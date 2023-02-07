@@ -9,7 +9,6 @@ function Seat(block, row, column, classSeat, passenger) {
 var controller = {
   init: function () {
     let seats = document.getElementById("seats");
-
     let result = [];
     document.getElementById("button").addEventListener("click", function () {
       let queue = document.getElementById("queue").value;
@@ -21,7 +20,6 @@ var controller = {
       if (controller.isInputValid(inputArrayRowsColumns, queue) === false) {
         return false;
       }
-
       controller.sortSeat(inputArrayRowsColumns, result);
       result.sort(controller.comparator("column"));
       result.sort(controller.comparator("classSeat"));
@@ -35,7 +33,6 @@ var controller = {
   parseInput: function (string) {
     string = string.replace(/\s/g, "");
     string = string.substring(2, string.length - 2);
-    l;
 
     let array = string.split("],[").map(function (x) {
       return x.split(",");
@@ -108,7 +105,7 @@ var controller = {
 
   seatPassengers: function (res, que) {
     if (res.length < que) {
-      alert("The plane can't take more than " + res.length + " passengers");
+      alert("The Plane Can't Take More Than " + res.length + " Passengers");
       for (i = 0; i < res.length; i++) {
         res[i].passenger = i + 1;
       }
